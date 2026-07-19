@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quick Math | Bastián Contreras</title>
+    <meta
+        name="description"
+        content="Detalles del proyecto Quick Math, una aplicación web para practicar cálculo mental."
+    >
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="../index.html" aria-label="Volver al portafolio">
+                <span class="brand-mark" aria-hidden="true">B</span>
+                <span>Bastián Contreras</span>
+            </a>
+
+            <a class="button button--secondary project-back" href="../index.html#proyectos">
+                Volver a proyectos
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="project-hero section">
+            <div class="container project-hero-grid">
+                <div>
+                    <p class="eyebrow">Aplicación web · Publicado</p>
+                    <h1>Quick Math</h1>
+
+                    <p class="hero-description">
+                        Aplicación responsive para practicar cálculo mental con
+                        distintas operaciones, niveles de dificultad, modos infinito y
+                        contrarreloj, y récords guardados en el navegador.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a
+                            class="button button--primary"
+                            href="https://bastianc-dev.github.io/quickmath/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Abrir aplicación
+                        </a>
+
+                        <a
+                            class="button button--secondary"
+                            href="https://github.com/bastianc-dev/quickmath"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver repositorio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-facts">
+                    <div>
+                        <span>Tipo</span>
+                        <strong>Aplicación web</strong>
+                    </div>
+
+                    <div>
+                        <span>Rol</span>
+                        <strong>Diseño y desarrollo</strong>
+                    </div>
+
+                    <div>
+                        <span>Estado</span>
+                        <strong>Publicado</strong>
+                    </div>
+
+                    <div>
+                        <span>Stack</span>
+                        <strong>HTML + CSS + JavaScript</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-detail-section">
+            <div class="container detail-layout">
+                <aside class="detail-navigation" aria-label="Índice del proyecto">
+                    <a href="#descripcion">Descripción</a>
+                    <a href="#funcionalidades">Funcionalidades</a>
+                    <a href="#logica">Lógica</a>
+                    <a href="#decisiones">Decisiones</a>
+                    <a href="#resultado">Resultado</a>
+                </aside>
+
+                <div class="detail-content">
+                    <article id="descripcion">
+                        <p class="eyebrow">01 · Contexto</p>
+                        <h2>Descripción</h2>
+
+                        <p>
+                            Quick Math permite practicar cálculo mental mediante
+                            ejercicios generados dinámicamente. Antes de comenzar, el
+                            usuario selecciona la operación, el rango numérico y el modo
+                            de juego.
+                        </p>
+
+                        <p>
+                            La métrica principal es el promedio de segundos por
+                            operación correcta. Las respuestas equivocadas no cambian de
+                            ejercicio y la última operación incompleta no se contabiliza.
+                        </p>
+                    </article>
+
+                    <article id="funcionalidades">
+                        <p class="eyebrow">02 · Producto</p>
+                        <h2>Funcionalidades</h2>
+
+                        <ul class="detail-list">
+                            <li>Ejercicios de suma, resta, multiplicación y división.</li>
+                            <li>Selección de rangos numéricos.</li>
+                            <li>Modo infinito.</li>
+                            <li>Modo contrarreloj de uno, tres o cinco minutos.</li>
+                            <li>Avance automático al responder correctamente.</li>
+                            <li>Cálculo del promedio de segundos por operación.</li>
+                            <li>Récords guardados por configuración.</li>
+                            <li>Interfaz adaptada a dispositivos móviles.</li>
+                        </ul>
+                    </article>
+
+                    <article id="logica">
+                        <p class="eyebrow">03 · Ingeniería</p>
+                        <h2>Lógica principal</h2>
+
+                        <p>
+                            JavaScript genera las operaciones, valida las respuestas,
+                            controla el tiempo, actualiza la interfaz y guarda los
+                            récords en localStorage.
+                        </p>
+
+                        <pre><code>function generateOperation(settings) {
+    // Genera una operación según el tipo y la dificultad.
+}
+
+function validateAnswer(userAnswer, correctAnswer) {
+    // Avanza solo cuando la respuesta es correcta.
+}
+
+function calculateAverage(totalTime, correctAnswers) {
+    // Devuelve los segundos por operación correcta.
+}</code></pre>
+                    </article>
+
+                    <article id="decisiones">
+                        <p class="eyebrow">04 · Criterio técnico</p>
+                        <h2>Decisiones técnicas</h2>
+
+                        <div class="decision-grid">
+                            <div>
+                                <h3>JavaScript sin framework</h3>
+                                <p>
+                                    El proyecto se construyó con DOM, eventos y estado
+                                    propio para practicar los fundamentos del lenguaje.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>localStorage</h3>
+                                <p>
+                                    Los récords permanecen en el navegador sin necesitar
+                                    una base de datos o un backend.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Divisiones exactas</h3>
+                                <p>
+                                    El divisor y el cociente se generan primero para
+                                    asegurar que el resultado sea entero.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Promedio por aciertos</h3>
+                                <p>
+                                    El resultado se calcula solo con operaciones
+                                    correctas para representar mejor el rendimiento.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="resultado">
+                        <p class="eyebrow">05 · Resultado</p>
+                        <h2>Resultado</h2>
+
+                        <p>
+                            La aplicación está publicada con GitHub Pages y funciona en
+                            escritorio y móvil. El proyecto demuestra manejo del DOM,
+                            eventos, temporizadores, persistencia local y diseño
+                            responsive.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>Proyecto del portafolio de Bastián Contreras.</p>
+            <a href="../index.html#contacto">Contacto</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRM de leads | Bastián Contreras</title>
+    <meta
+        name="description"
+        content="Detalles técnicos del proyecto CRM de gestión de leads desarrollado con FastAPI y PostgreSQL."
+    >
+
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="../index.html" aria-label="Volver al portafolio">
+                <span class="brand-mark" aria-hidden="true">B</span>
+                <span>Bastián Contreras</span>
+            </a>
+
+            <a class="button button--secondary project-back" href="../index.html#proyectos">
+                Volver a proyectos
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="project-hero section">
+            <div class="container project-hero-grid">
+                <div>
+                    <p class="eyebrow">Backend API · Publicado</p>
+                    <h1>CRM de gestión de leads</h1>
+
+                    <p class="hero-description">
+                        API REST para gestionar usuarios y leads con autenticación JWT,
+                        roles, permisos por propiedad, búsqueda, filtros, paginación y
+                        persistencia en PostgreSQL.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a
+                            class="button button--primary"
+                            href="https://crm-backend-kpcb.onrender.com/docs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Abrir Swagger
+                        </a>
+
+                        <a
+                            class="button button--secondary"
+                            href="https://github.com/bastianc-dev/crm-backend"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver repositorio
+                        </a>
+
+                        <a
+                            class="button button--secondary"
+                            href="https://crm-backend-kpcb.onrender.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver API
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-facts">
+                    <div>
+                        <span>Tipo</span>
+                        <strong>API backend</strong>
+                    </div>
+
+                    <div>
+                        <span>Rol</span>
+                        <strong>Desarrollo completo</strong>
+                    </div>
+
+                    <div>
+                        <span>Estado</span>
+                        <strong>Publicado</strong>
+                    </div>
+
+                    <div>
+                        <span>Pruebas</span>
+                        <strong>31 tests aprobados</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-detail-section">
+            <div class="container detail-layout">
+                <aside class="detail-navigation" aria-label="Índice del proyecto">
+                    <a href="#descripcion">Descripción</a>
+                    <a href="#funcionalidades">Funcionalidades</a>
+                    <a href="#arquitectura">Arquitectura</a>
+                    <a href="#decisiones">Decisiones</a>
+                    <a href="#resultado">Resultado</a>
+                </aside>
+
+                <div class="detail-content">
+                    <article id="descripcion">
+                        <p class="eyebrow">01 · Contexto</p>
+                        <h2>Descripción</h2>
+
+                        <p>
+                            El proyecto es un CRM backend para administrar usuarios y
+                            clientes potenciales. El sistema diferencia entre
+                            administradores y empleados, y aplica permisos distintos
+                            según el rol y la propiedad de cada lead.
+                        </p>
+
+                        <p>
+                            El objetivo fue construir una API completa y evaluable:
+                            base de datos, autenticación, reglas de negocio, pruebas,
+                            documentación y despliegue.
+                        </p>
+                    </article>
+
+                    <article id="funcionalidades">
+                        <p class="eyebrow">02 · Producto</p>
+                        <h2>Funcionalidades</h2>
+
+                        <ul class="detail-list">
+                            <li>Registro, inicio de sesión y refresh token.</li>
+                            <li>Autenticación JWT y hash de contraseñas.</li>
+                            <li>Roles de administrador y empleado.</li>
+                            <li>CRUD de usuarios y leads.</li>
+                            <li>Permisos por rol y por propiedad del lead.</li>
+                            <li>Búsqueda, filtros, ordenamiento y paginación.</li>
+                            <li>Validación de datos con Pydantic.</li>
+                            <li>Migraciones con Alembic.</li>
+                            <li>Manejo centralizado de errores y logging.</li>
+                            <li>31 pruebas automatizadas con Pytest.</li>
+                            <li>Documentación Swagger y despliegue en Render.</li>
+                        </ul>
+                    </article>
+
+                    <article id="arquitectura">
+                        <p class="eyebrow">03 · Ingeniería</p>
+                        <h2>Arquitectura</h2>
+
+                        <p>
+                            La aplicación está separada por responsabilidades. Los
+                            routers manejan HTTP, los servicios contienen las reglas de
+                            negocio y los repositorios se encargan del acceso a datos.
+                        </p>
+
+                        <pre><code>app/
+├── auth/
+├── core/
+├── models/
+├── repositories/
+├── routers/
+├── schemas/
+├── services/
+├── tests/
+├── database.py
+└── main.py
+
+alembic/
+Dockerfile
+docker-compose.yml
+requirements.txt
+README.md</code></pre>
+                    </article>
+
+                    <article id="decisiones">
+                        <p class="eyebrow">04 · Criterio técnico</p>
+                        <h2>Decisiones técnicas</h2>
+
+                        <div class="decision-grid">
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <p>
+                                    Los datos tienen relaciones claras entre usuarios y
+                                    leads, por lo que una base relacional encaja bien con
+                                    el problema.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>FastAPI</h3>
+                                <p>
+                                    Facilita la validación, la documentación OpenAPI y la
+                                    creación de endpoints con Python.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>SQLAlchemy y Alembic</h3>
+                                <p>
+                                    Permiten modelar el acceso a datos y versionar los
+                                    cambios de la base de datos mediante migraciones.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Separación por capas</h3>
+                                <p>
+                                    Evita concentrar toda la lógica en los endpoints y
+                                    hace más fácil probar y mantener el proyecto.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="resultado">
+                        <p class="eyebrow">05 · Resultado</p>
+                        <h2>Resultado</h2>
+
+                        <p>
+                            El CRM está publicado y puede revisarse desde Swagger. El
+                            repositorio incluye instrucciones de instalación, variables
+                            de entorno, arquitectura, endpoints, pruebas y decisiones
+                            técnicas.
+                        </p>
+
+                        <p>
+                            El proyecto reúne las partes principales de una aplicación
+                            backend: lógica de negocio, permisos, persistencia,
+                            validación, testing, documentación y despliegue.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>Proyecto del portafolio de Bastián Contreras.</p>
+            <a href="../index.html#contacto">Contacto</a>
+        </div>
+    </footer>
+</body>
+</html>

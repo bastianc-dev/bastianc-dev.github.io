@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Bastián Contreras</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm 14mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9.7pt;
+            line-height: 1.22;
+        }
+
+        a {
+            color: #0d5ea8;
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin: 0 0 2px;
+            color: #174f80;
+            font-size: 20pt;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .role {
+            margin: 0 0 5px;
+            color: #174f80;
+            font-size: 12pt;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .contact {
+            margin: 0 0 7px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #174f80;
+            font-size: 8.8pt;
+            text-align: center;
+        }
+
+        section {
+            margin-top: 7px;
+        }
+
+        h2 {
+            margin: 0 0 3px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #9db4c8;
+            color: #174f80;
+            font-size: 11.5pt;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0 0 3px;
+        }
+
+        .item-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 1px;
+        }
+
+        .item-title {
+            font-weight: 700;
+        }
+
+        .date {
+            color: #555;
+            font-size: 8.8pt;
+            white-space: nowrap;
+        }
+
+        .tech {
+            margin-bottom: 2px;
+            color: #174f80;
+            font-size: 8.9pt;
+            font-weight: 700;
+        }
+
+        ul {
+            margin: 2px 0 3px 16px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 1px;
+            padding-left: 1px;
+        }
+
+        .links {
+            margin-top: 2px;
+            font-size: 8.9pt;
+        }
+
+        .compact p {
+            margin-bottom: 1px;
+        }
+
+        .label {
+            font-weight: 700;
+        }
+
+        .two-column {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: 1.25fr 0.75fr;
+        }
+
+        .avoid-break {
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cambia este nombre y vuelve a exportar el HTML como PDF. -->
+    <h1>Bastián Contreras</h1>
+    <p class="role">Desarrollador Backend Python Junior</p>
+    <p class="contact">
+        Chile ·
+        <a href="mailto:bastianc.dev@gmail.com">bastianc.dev@gmail.com</a> ·
+        <a href="https://github.com/bastianc-dev">github.com/bastianc-dev</a> ·
+        <a href="https://bastianc-dev.github.io/">Portafolio</a>
+    </p>
+
+    <section>
+        <h2>Perfil</h2>
+        <p>
+            Desarrollador backend junior enfocado en Python y FastAPI. Construí y desplegué una API REST para gestión de leads con autenticación JWT, permisos por rol, PostgreSQL, migraciones, Docker y 31 pruebas automatizadas. Busco mi primera oportunidad profesional para aportar en el desarrollo de APIs, lógica de negocio y software mantenible.
+        </p>
+    </section>
+
+    <section>
+        <h2>Tecnologías</h2>
+        <div class="compact">
+            <p><span class="label">Backend:</span> Python, FastAPI, SQLAlchemy, Pydantic, APIs REST, JWT</p>
+            <p><span class="label">Bases de datos:</span> PostgreSQL, SQL, Alembic</p>
+            <p><span class="label">Calidad y herramientas:</span> Pytest, Docker, Git, GitHub, Swagger/OpenAPI, logging</p>
+            <p><span class="label">Web:</span> HTML, CSS, JavaScript</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Proyectos técnicos</h2>
+
+        <div class="avoid-break">
+            <div class="item-header">
+                <span class="item-title">CRM Backend</span>
+                <span class="date">2026</span>
+            </div>
+            <p class="tech">Python · FastAPI · PostgreSQL · SQLAlchemy · Alembic · JWT · Docker · Pytest</p>
+            <ul>
+                <li>Desarrollé una API REST para administrar usuarios y leads con CRUD y una arquitectura separada por responsabilidades.</li>
+                <li>Implementé autenticación JWT, hash de contraseñas, roles de administrador y empleado, y permisos según propiedad del lead.</li>
+                <li>Añadí búsqueda, filtros, ordenamiento, paginación, validaciones, manejo de errores y logging.</li>
+                <li>Modelé PostgreSQL con SQLAlchemy y Alembic, preparé Docker y validé el sistema con 31 pruebas automatizadas.</li>
+            </ul>
+            <p class="links">
+                <a href="https://github.com/bastianc-dev/crm-backend">Repositorio</a> ·
+                <a href="https://crm-backend-kpcb.onrender.com/docs">Swagger</a>
+            </p>
+        </div>
+
+        <div class="avoid-break" style="margin-top: 5px;">
+            <div class="item-header">
+                <span class="item-title">Quick Math</span>
+                <span class="date">2026</span>
+            </div>
+            <p class="tech">JavaScript · HTML · CSS · GitHub Pages</p>
+            <ul>
+                <li>Creé una aplicación responsive para practicar cálculo mental con modos infinito y contrarreloj de 1, 3 o 5 minutos.</li>
+                <li>Implementé selección de operaciones y dificultad, avance automático y una interfaz adaptada a móviles.</li>
+                <li>Guardé récords por configuración en el navegador y publiqué la aplicación mediante GitHub Pages.</li>
+            </ul>
+            <p class="links">
+                <a href="https://bastianc-dev.github.io/quickmath/">Aplicación</a> ·
+                <a href="https://github.com/bastianc-dev/quickmath">Repositorio</a>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formación</h2>
+        <div class="avoid-break">
+            <div class="item-header">
+                <span class="item-title">Estudios de Analista Programador Computacional · Duoc UC</span>
+                <span class="date">2023–2024</span>
+            </div>
+            <ul>
+                <li>Formación en programación, bases de datos y desarrollo web con Python, Java, SQL, PL/SQL, HTML, CSS y JavaScript.</li>
+            </ul>
+        </div>
+
+        <div class="avoid-break" style="margin-top: 3px;">
+            <div class="item-header">
+                <span class="item-title">Formación complementaria autodidacta</span>
+                <span class="date">2024–actualidad</span>
+            </div>
+            <ul>
+                <li>Profundización práctica en desarrollo backend, APIs REST, autenticación, pruebas automatizadas, contenedores y despliegue.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Idiomas</h2>
+        <div class="two-column compact">
+            <p><span class="label">Español:</span> Nativo</p>
+            <p><span class="label">Inglés:</span> Intermedio alto</p>
+        </div>
+    </section>
+</body>
+</html>
